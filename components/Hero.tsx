@@ -78,7 +78,7 @@ export default function Hero() {
       {/* 1. Background Image & Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Gemini_Generated_Image_7x1tie7x1tie7x1t (1).png"
+          src="/gemini-1.png"
           alt="Mudanzas Camión"
           fill
           className="object-cover"
