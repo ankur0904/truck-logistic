@@ -92,10 +92,10 @@ export default function Footer() {
                 <div>
                   <div className="font-semibold text-white">Teléfono</div>
                   <a
-                    href="tel:+34123456789"
+                    href="tel:+34674090983"
                     className="hover:text-white transition"
                   >
-                    +34 123 456 789
+                    +34 674 090 983
                   </a>
                 </div>
               </li>
@@ -104,12 +104,12 @@ export default function Footer() {
                 <div>
                   <div className="font-semibold text-white">WhatsApp</div>
                   <a
-                    href="https://wa.me/34123456789"
+                    href="https://wa.me/34674090983"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition"
                   >
-                    +34 123 456 789
+                    +34 674 090 983
                   </a>
                 </div>
               </li>
