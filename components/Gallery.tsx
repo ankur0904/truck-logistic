@@ -28,7 +28,7 @@ export default function Gallery() {
       alt: "Mudanza en proceso",
     },
     {
-      src: "/gemini-6.png",
+      src: "/gemini-6.jpeg",
       alt: "Entrega exitosa",
     },
   ];

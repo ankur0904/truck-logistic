@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import QuoteForm from '@/components/QuoteForm';
 import Services from '@/components/Services';
+import VideoSection from '@/components/VideoSection';
 import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
 import Gallery from '@/components/Gallery';
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <QuoteForm />
         <Services />
+        <VideoSection />
         <About />
         <Testimonials />
         <Gallery />
