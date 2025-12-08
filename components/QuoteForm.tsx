@@ -12,11 +12,47 @@ export default function QuoteForm() {
     date: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("¡Gracias! Nos pondremos en contacto contigo en menos de 2 horas.");
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        alert("¡Gracias! Nos pondremos en contacto contigo en menos de 2 horas.");
+        // Reset form
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          movingFrom: "",
+          movingTo: "",
+          date: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus('error');
+        alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -186,9 +222,10 @@ export default function QuoteForm() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            disabled={isSubmitting}
+            className="w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:bg-blue-400 disabled:cursor-not-allowed"
           >
-            Enviar Solicitud
+            {isSubmitting ? "Enviando..." : "Enviar Solicitud"}
           </button>
 
           <p className="text-center text-sm text-gray-600 mt-4 flex items-center justify-center gap-2">
