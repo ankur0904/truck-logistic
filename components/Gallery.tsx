@@ -16,19 +16,19 @@ export default function Gallery() {
       alt: "Equipo de trabajo profesional",
     },
     {
-      src: "/gemini-3.png",
+      src: "/gemini-3.jpeg",
       alt: "Servicio de embalaje",
     },
     {
-      src: "/gemini-4.png",
+      src: "/gemini-4.jpeg",
       alt: "Transporte seguro",
     },
     {
-      src: "/gemini-1.png",
+      src: "/gemini-5.png",
       alt: "Mudanza en proceso",
     },
     {
-      src: "/gemini-2.png",
+      src: "/gemini-6.png",
       alt: "Entrega exitosa",
     },
   ];
